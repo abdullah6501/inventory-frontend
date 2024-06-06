@@ -1,0 +1,28 @@
+<button mat-raised-button color="primary" (click)="goBack()">
+  <mat-icon>west</mat-icon>
+</button>
+
+<div class="box">
+  <h1>Add New Device</h1>
+  <mat-form-field class="add">
+    <mat-label>New Device</mat-label>
+    <input
+      matInput
+      placeholder="Device"
+      [(ngModel)]="newDevice"
+    /> </mat-form-field
+  ><br />
+  <button
+    id="butt"
+    type="submit"
+    mat-raised-button
+    color="primary"
+    (click)="submitDevice()"
+  >
+    Submit
+  </button>
+</div>
+<div class="desk">
+<button mat-raised-button color="primary" (click)="goDesk()">Desk</button>
+<button mat-raised-button color="primary" (click)="goEmployee()">Employee</button>
+</div>

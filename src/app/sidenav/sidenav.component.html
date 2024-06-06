@@ -1,0 +1,52 @@
+<div>
+  <mat-toolbar
+    class="mat-elevation-z8"
+    style="background-color: #3c9ab0; height: 85px"
+  >
+    <button (click)="drawer.toggle()" mat-icon-button>
+      <mat-icon>menu</mat-icon>
+      <span class="logo">
+        <img
+          src="assets/image/pozent_logo.png"
+          style="height: 150px; width: 160px"
+          id="Pozent"
+        />
+      </span>
+    </button>
+  </mat-toolbar>
+</div>
+<mat-drawer-container autosize class="sidenav">
+  <mat-drawer
+    #drawer
+    opened="true"
+    mode="side"
+    position="start"
+    style="background-color: #5b7595"
+  >
+    <mat-nav-list>
+      <!-- <mat-list-item>
+        <button routerLink="/portfolio" mat-button style="color: white">
+          <mat-icon></mat-icon> PORTFOLIO
+        </button>
+      </mat-list-item> -->
+      <mat-list-item>
+        <button routerLink="/additem" mat-button style="color: white" disabled>
+          <mat-icon>devices</mat-icon>INVENTORY
+        </button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content style="background-color: ivory">
+    <div style="height: 865px; width: 1100px; background-color: ivory">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+<footer
+  class="footer"
+  style="background-color: #3c9ab0; color: white; padding: 10px"
+>
+  <div>
+    <span style="text-align: left">&copy; 2024 Pozent Corporation</span>
+  </div>
+</footer>

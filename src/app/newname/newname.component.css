@@ -1,0 +1,33 @@
+.box {
+  box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* gap: 1rem; */
+  justify-content: center;
+  align-items: center;
+  margin-left: 400px;
+  margin-top: 150px;
+  background-color: white;
+}
+
+.box:hover {
+  box-shadow: 0px 0px 6px 2px rgb(164, 218, 235);
+}
+
+h1 {
+  color: rgb(77, 75, 221, 1);
+  position: absolute;
+  top: 240px;
+}
+
+.desk {
+  position: absolute;
+  /* left: 900px; */
+  right: 100px;
+  top: 50px;
+  display: flex;
+  gap: 30px;
+}

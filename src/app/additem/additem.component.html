@@ -1,0 +1,102 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+/>
+
+<button
+  id="data"
+  mat-raised-button
+  color="primary"
+  (click)="navigateToDeskData()"
+>
+  Details
+</button>
+<!-- <button class="pdf" (click)="downloadPDF()">Download PDF</button> -->
+<!-- <button mat-raised-button color="primary" class="pdf" (click)="downloadPDF()">
+  <mat-icon> cloud_download</mat-icon>
+</button> -->
+<button class="pdf" (click)="downloadPDF()">
+  <i class="fas fa-download"></i>
+</button>
+
+<div class="total">
+  <table style="border: 1px groove grey">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Inventory ID</th>
+        <th>Devices</th>
+        <th>Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of Inventorydetails">
+        <td>{{ item.ID }}</td>
+        <td>{{ item.Inventory_ID }}</td>
+        <td>{{ item.Devices }}</td>
+        <td>{{ item.Count }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="button">
+  <button mat-raised-button color="primary" (click)="connection()">
+    Assign
+  </button>
+</div>
+
+<div class="list">
+  <form
+    (submit)="
+      onSubmit(
+        deviceSelect.value,
+        deviceName.value,
+        serialNumber.value,
+        brand.value,
+        condition.value
+      )
+    "
+  >
+    <mat-form-field>
+      <mat-label>Select Device</mat-label>
+      <mat-select #deviceSelect>
+        <mat-option *ngFor="let device of devices" [value]="device">
+          {{ device }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>Enter Device Name</mat-label>
+      <input matInput placeholder=" Device Name" #deviceName /> </mat-form-field
+    ><br />
+    <mat-form-field appearance="fill">
+      <mat-label>Enter Serial Number</mat-label>
+      <input
+        matInput
+        placeholder="Serial Number"
+        #serialNumber
+      /> </mat-form-field
+    ><br />
+    <mat-form-field appearance="fill">
+      <mat-label>Enter Brand</mat-label>
+      <input matInput placeholder="Brand" #brand /> </mat-form-field
+    ><br />
+    <mat-form-field appearance="fill">
+      <mat-label>Condition</mat-label>
+      <mat-select #condition>
+        <mat-option value="good">Good</mat-option>
+        <!-- <mat-option value="under condition">Under Condition</mat-option> -->
+        <mat-option value="need exchange">Need Exchange</mat-option>
+      </mat-select> </mat-form-field
+    ><br />
+    <button id="butt" type="submit" mat-raised-button color="primary">
+      submit
+    </button>
+  </form>
+
+  <button id="new" type="submit" mat-raised-button (click)="goNew()">
+    +
+    <!-- <mat-icon>plus</mat-icon> -->
+  </button>
+</div>

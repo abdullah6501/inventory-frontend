@@ -1,0 +1,167 @@
+table {
+  border: 1px ridge black;
+  position: absolute;
+  left: 5px;
+  top: 100px;
+  font-size: 16px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  max-width: 100px;
+}
+
+td {
+  padding: 7px;
+  /* border: 1px solid black; */
+}
+
+.th {
+  border: 1px solid black;
+}
+
+.td {
+  border: 1px solid black;
+}
+
+/* th,
+td {
+  border: 1px groove grey;
+} */
+
+#color {
+  background-color: white;
+  border: 1px solid black;
+}
+
+#edit {
+  position: absolute;
+  left: 93%;
+  top: 65px;
+}
+
+#next {
+  position: absolute;
+  left: 45%;
+  top: 20px;
+}
+
+input {
+  /* width: 50px; */
+  padding: 20px;
+}
+
+/* .modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; */
+/* background-color: rgba(0, 0, 0, 0.5); Semi-transparent background */
+/* z-index: 999; Ensure modal is on top */
+/* display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: -500%;
+  width: 500px;
+  height: 100%;
+  background-color: #f1f1f1;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+  transition: right 0.3s ease;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.modal.show {
+  right: 0;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.blur-background {
+  filter: blur(5px);
+}
+
+.editsub {
+  position: relative;
+  right: -130px;
+  top: 820px;
+}
+
+.table-content {
+  position: absolute;
+  left: 70px;
+}
+
+h2 {
+  position: relative;
+  left: 140px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+select {
+  margin-right: 10px;
+  width: 200px;
+  border: none;
+  border-bottom: 1px ridge grey;
+  /* border-left: 1px ridge grey; */
+  height: 46px;
+  box-shadow: -2px 0 5px rgba(214, 209, 209, 0.3);
+  /* border-radius: 5px; */
+}
+input {
+  width: 200px;
+  height: 5px;
+  /* border-radius: 5px; */
+  border: none;
+  border-bottom: 1px ridge grey;
+  box-shadow: -2px 0 5px rgba(214, 209, 209, 0.3);
+}
+
+input:focus {
+  border: none;
+}
+
+#csv {
+  position: absolute;
+  top: 50px;
+  /* left: 1050px; */
+  right: 100px;
+}
+
+#csv:hover::after {
+  content: "Download All Details";
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(43, 91, 223, 0.7);
+  color: rgb(255, 255, 255);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  white-space: nowrap;
+  transition: all 0.4ms ease; /* Adds a smooth transition effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 999; /* Ensures the edit text appears above other elements */
+}
+
+.large-icon {
+  font-size: 36px; /* Adjust the size as needed */
+  width: 36px; /* Ensure the icon container is also larger */
+  height: 36px; /* Ensure the icon container is also larger */
+}

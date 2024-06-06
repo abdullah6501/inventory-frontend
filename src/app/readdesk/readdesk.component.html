@@ -1,0 +1,14 @@
+<table style="border: 1px groove grey">
+  <thead>
+    <tr>
+      <th>Desk</th>
+      <th>Employee Name</th>
+    </tr>
+  </thead>
+  <tbody id="color">
+    <tr *ngFor="let item of deskempData">
+      <td>{{ item.desk }}</td>
+      <td>{{ item.Emp_name }}</td>
+    </tr>
+  </tbody>
+</table>

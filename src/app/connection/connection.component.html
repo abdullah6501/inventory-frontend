@@ -1,0 +1,165 @@
+<!-- <button mat-raised-button color="primary" (click)="goBack()">
+  <mat-icon>west</mat-icon>
+</button>
+
+<div class="device">
+  <mat-form-field>
+    <mat-label>Select Employee</mat-label>
+    <mat-select
+      [(ngModel)]="selectedValue"
+      (ngModelChange)="onEmployeeSelect()"
+    >
+      <mat-option *ngFor="let item of data" [value]="item">{{
+        item.Emp_Name
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Select Device</mat-label>
+    <mat-select [(ngModel)]="selectedDevice" (ngModelChange)="onDeviceSelect()">
+      <mat-option *ngFor="let device of uniqueDevices" [value]="device">{{
+        device
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="selectedDevice">
+    <mat-label>Device List</mat-label>
+    <mat-select [(ngModel)]="selectedList">
+      <ng-container *ngFor="let list of devicesWithList">
+        <mat-option
+          *ngIf="
+            list.Devices === selectedDevice &&
+            !selectedItems.includes(list.Monitor_Name)
+          "
+          [value]="list.Monitor_Name"
+        >
+          {{ list.Monitor_Name }}
+        </mat-option>
+      </ng-container>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div class="list">
+  <mat-list>
+    <mat-list-item>{{ selectedValue?.Emp_Name }}</mat-list-item>
+    <mat-list-item *ngFor="let item of selectedItems">{{ item }}</mat-list-item>
+    <mat-list-item>{{ selectedDeskValue?.desk_name }}</mat-list-item>
+  </mat-list>
+</div>
+
+<div class="desk">
+  <mat-form-field>
+    <mat-label>Select Desk</mat-label>
+    <mat-select [(ngModel)]="selectedDeskValue">
+      <mat-option *ngFor="let desk of deskValues" [value]="desk">
+        {{ desk.desk_name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<button
+  class="button"
+  mat-raised-button
+  color="primary"
+  (click)="storeInArray()"
+>
+  Save
+</button>
+<button
+  class="button1"
+  mat-raised-button
+  color="primary"
+  (click)="sendToDatabase()"
+>
+  Submit
+</button> -->
+
+<button mat-raised-button color="primary" (click)="goBack()">
+  <mat-icon>west</mat-icon>
+</button>
+
+<div class="device">
+  <mat-form-field>
+    <mat-label>Select Employee</mat-label>
+    <mat-select
+      [(ngModel)]="selectedValue"
+      (ngModelChange)="onEmployeeSelect()"
+    >
+      <mat-option *ngFor="let employee of data" [value]="employee">
+        {{ employee.Emp_Name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Select Device</mat-label>
+    <mat-select [(ngModel)]="selectedDevice" (ngModelChange)="onDeviceSelect()">
+      <mat-option *ngFor="let device of uniqueDevices" [value]="device">
+        {{ device }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="selectedDevice">
+    <mat-label>Device List</mat-label>
+    <mat-select [(ngModel)]="selectedList">
+      <ng-container *ngFor="let device of devicesWithList">
+        <mat-option
+          *ngIf="
+            device.Devices === selectedDevice &&
+            !selectedItems.includes(device.Monitor_Name)
+          "
+          [value]="device.Monitor_Name"
+        >
+          {{ device.Monitor_Name }}
+        </mat-option>
+      </ng-container>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div class="list">
+  <mat-list>
+    <mat-list-item *ngIf="selectedValue">{{
+      selectedValue.Emp_Name
+    }}</mat-list-item>
+    <mat-list-item *ngFor="let item of selectedItems">{{ item }}</mat-list-item>
+    <mat-list-item *ngIf="selectedDeskValue">{{
+      selectedDeskValue.desk_name
+    }}</mat-list-item>
+  </mat-list>
+</div>
+
+<div class="desk">
+  <mat-form-field>
+    <mat-label>Select Desk</mat-label>
+    <mat-select [(ngModel)]="selectedDeskValue">
+      <mat-option *ngFor="let desk of deskValues" [value]="desk">
+        {{ desk.desk_name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<button
+  class="button"
+  mat-raised-button
+  color="primary"
+  (click)="storeInArray()"
+>
+  Save
+</button>
+<button
+  class="button1"
+  mat-raised-button
+  color="primary"
+  (click)="sendToDatabase()"
+>
+  Submit
+</button>
+
+<mat-spinner *ngIf="loading" diameter="30" class="spinner"></mat-spinner>

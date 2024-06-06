@@ -1,0 +1,40 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .logo {
+    width: 100px;
+    height: 180px;
+    position: absolute;
+    left: 60px;
+    top: -52px;
+    /* padding: 2px; */
+     box-shadow: #f2f5f7;
+  }
+  .admin,
+  .edit {
+  
+    display: flex;
+    align-content: right;
+    padding-right: 5px;
+    position: absolute;
+    left: 1150px
+  }
+  input.button {
+    border: none;
+    /* Remove border */
+    border-radius: 25%;
+    margin: 5px;
+    /* Adjust margin as needed */
+    padding: 10px 20px;
+    /*Adjust padding as needed */
+    background-color: #04586b;
+    color:white;
+  }
+  input:hover {
+    color:green;
+    background-color: rgb(250, 250, 250);
+  }
+  
+  button:hover{
+    background-color: skyblue;
+  }

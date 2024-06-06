@@ -1,0 +1,206 @@
+<button mat-raised-button color="primary" (click)="goBack()">
+  <mat-icon>west</mat-icon>
+</button>
+
+<div class="search-container">
+  <select [(ngModel)]="searchType">
+    <option value="Emp_name">Employee Name</option>
+    <option value="desk">Desk</option>
+  </select>
+  <input
+    type="text"
+    placeholder="Search"
+    [(ngModel)]="searchTerm"
+    (input)="filterEmployees()"
+  />
+</div>
+
+<button id="csv" mat-button (click)="downloadAllCSV()">
+  <mat-icon class="large-icon">download_for_offline</mat-icon>
+</button>
+<div class="read">
+  <table style="border: 1px groove grey">
+    <thead>
+      <tr>
+        <th class="th">Employee Name</th>
+        <th class="th">Desk</th>
+        <th class="th">Monitor</th>
+        <th class="th">Mouse</th>
+        <th class="th">CPU</th>
+        <th class="th">Key Board</th>
+        <th class="th">VOIP IP Phone</th>
+        <th class="th">Wooden Pedestal</th>
+        <th class="th">Water Bottle</th>
+        <th class="th">Bag</th>
+        <th class="th">Web Camera</th>
+        <th class="th">Head Phone</th>
+        <th class="th">Edit</th>
+        <th class="th">Download</th>
+      </tr>
+    </thead>
+    <tbody id="color">
+      <tr *ngFor="let item of filteredDeskData; let i = index">
+        <td class="td">{{ item.Emp_name }}</td>
+        <td class="td">{{ item.desk }}</td>
+        <td class="td">{{ item.monitor }}</td>
+        <td class="td">{{ item.mouse }}</td>
+        <td class="td">{{ item.CPU }}</td>
+        <td class="td">{{ item.key_board }}</td>
+        <td class="td">{{ item.VOIP_IP_Phone }}</td>
+        <td class="td">{{ item.Wooden_Pedestral }}</td>
+        <td class="td">{{ item.Water_Bottle }}</td>
+        <td class="td">{{ item.Bag }}</td>
+        <td class="td">{{ item.web_camera }}</td>
+        <td class="td">{{ item.Head_phone }}</td>
+        <td class="td">
+          <button mat-button (click)="editEmployee(i)">
+            <mat-icon>mode_edit</mat-icon>
+          </button>
+        </td>
+        <td class="td">
+          <button mat-button (click)="downloadCSV(item)">
+            <mat-icon>download</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Edit Employee Modal -->
+<div class="modal" *ngIf="selectedEmployee" [@slideInOut]="'in'">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <h2>Edit Employee Details</h2>
+    <table class="table-content">
+      <tr>
+        <td>Employee Name:</td>
+        <td>
+          <input
+            type="text"
+            [(ngModel)]="selectedEmployee.Emp_name"
+            placeholder="Employee Name"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Desk:</td>
+        <td>
+          <input
+            type="text"
+            [(ngModel)]="selectedEmployee.desk"
+            placeholder="Desk"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Monitor:</td>
+        <td>
+          <input
+            type="text"
+            [(ngModel)]="selectedEmployee.monitor"
+            placeholder="Monitor"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Mouse:</td>
+        <td>
+          <input
+            type="text"
+            [(ngModel)]="selectedEmployee.mouse"
+            placeholder="Mouse"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>CPU:</td>
+        <td>
+          <input
+            type="text"
+            [(ngModel)]="selectedEmployee.CPU"
+            placeholder="CPU"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Key Board:</td>
+        <td>
+          <input
+            type="text"
+            [(ngModel)]="selectedEmployee.key_board"
+            placeholder="Key Board"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>VOIP Phone:</td>
+        <td>
+          <input
+            type="text"
+            [(ngModel)]="selectedEmployee.VOIP_IP_Phone"
+            placeholder="VOIP Phone"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Wooden Pedestral:</td>
+        <td>
+          <input
+            type="text"
+            [(ngModel)]="selectedEmployee.Wooden_Pedestral"
+            placeholder="Wooden Pedestal"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Water Bottle:</td>
+        <td>
+          <input
+            type="text"
+            [(ngModel)]="selectedEmployee.Water_Bottle"
+            placeholder="Water Bottle"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Bag:</td>
+        <td>
+          <input
+            type="text"
+            [(ngModel)]="selectedEmployee.Bag"
+            placeholder="Bag"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Web Camera:</td>
+        <td>
+          <input
+            type="text"
+            [(ngModel)]="selectedEmployee.web_camera"
+            placeholder="Web Camera"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Head Phone:</td>
+        <td>
+          <input
+            type="text"
+            [(ngModel)]="selectedEmployee.Head_phone"
+            placeholder="Head Phone"
+          />
+        </td>
+      </tr>
+    </table>
+    <button
+      class="editsub"
+      mat-raised-button
+      color="primary"
+      (click)="saveChanges()"
+    >
+      Save Changes
+    </button>
+  </div>
+</div>
