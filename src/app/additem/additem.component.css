@@ -1,102 +1,161 @@
-.button {
-  position: absolute;
-  left: 860px;
-  top: 130px;
+/* Small devices (mobile) */
+@media (max-width: 600px) {
+  .button {
+    left: 50px;
+    top: 50px;
+  }
+
+  .list {
+    left: 30px;
+    top: 100px;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #butt {
+    left: 20px;
+    top: 300px;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  #data {
+    left: 30px;
+    top: 50px;
+  }
+
+  #new {
+    width: 30px;
+    height: 40px;
+    top: -80px;
+    right: 5px;
+  }
+
+  .total {
+    top: 100px;
+    left: 10px;
+    max-height: 400px;
+    font-size: 12px;
+  }
+
+  .pdf {
+    margin-top: 50px;
+    margin-left: 150px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .pdf i {
+    font-size: 20px;
+  }
 }
 
-.list {
-  position: absolute;
-  left: 750px;
-  top: 210px;
-  display: flex;
-  gap: 10px;
-  /* justify-content: space-between; */
+/* Medium devices (tablet) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .button {
+    left: 300px;
+    top: 80px;
+  }
+
+  .list {
+    left: 150px;
+    top: 150px;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  #butt {
+    left: 60px;
+    top: 350px;
+  }
+
+  mat-form-field {
+    width: 80%;
+  }
+
+  #data {
+    left: 150px;
+    top: 80px;
+  }
+
+  #new {
+    width: 35px;
+    height: 45px;
+    top: -90px;
+    right: 6px;
+  }
+
+  .total {
+    top: 120px;
+    left: 50px;
+    max-height: 500px;
+    font-size: 14px;
+  }
+
+  .pdf {
+    margin-top: 70px;
+    margin-left: 250px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .pdf i {
+    font-size: 22px;
+  }
 }
 
-#butt {
-  position: absolute;
-  left: 120px;
-  top: 430px;
-}
+/* Large devices (desktop) */
+@media (min-width: 1025px) {
+  .button {
+    left: 860px;
+    top: 130px;
+  }
 
-mat-form-field {
-  width: 300px;
-}
+  .list {
+    left: 750px;
+    top: 210px;
+    flex-direction: row;
+    gap: 10px;
+  }
 
-#data {
-  position: absolute;
-  left: 760px;
-  top: 130px;
-}
-#new {
-  width: 40px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: white;
-  position: absolute;
-  top: -100px;
-  /* left: 1000px; */
-  right: 8px;
-}
+  #butt {
+    left: 120px;
+    top: 430px;
+  }
 
-#new:hover::after {
-  content: "Add";
-  position: absolute;
-  top: 130%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(43, 91, 223, 0.7);
-  color: rgb(255, 255, 255);
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 11px;
-  white-space: nowrap;
-  transition: all 0.4ms ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  z-index: 999;
-}
+  mat-form-field {
+    width: 300px;
+  }
 
-.total {
-  position: absolute;
-  top: 150px;
-  left: 100px;
-  max-height: 600px;
-  overflow: auto;
-  background-color: white;
-  box-shadow: 10px 10px 5px grey;
-  font-size: 15px;
-}
+  #data {
+    left: 760px;
+    top: 130px;
+  }
 
-table,
-th,
-td {
-  border: 1px solid;
-}
+  #new {
+    width: 40px;
+    height: 50px;
+    top: -100px;
+    right: 8px;
+  }
 
-.pdf {
-  margin-top: 100px;
-  margin-left: 430px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  border: none;
-  background-color: #3f51b5;
-  color: white;
-  cursor: pointer;
-}
+  .total {
+    top: 150px;
+    left: 100px;
+    max-height: 600px;
+    font-size: 15px;
+  }
 
-.pdf i {
-  font-size: 24px;
-}
+  .pdf {
+    margin-top: 100px;
+    margin-left: 430px;
+    width: 40px;
+    height: 40px;
+  }
 
-.pdf:hover {
-  background-color: #3cd488;
-}
-
-.pdf:active {
-  background-color: #283593;
+  .pdf i {
+    font-size: 24px;
+  }
 }
